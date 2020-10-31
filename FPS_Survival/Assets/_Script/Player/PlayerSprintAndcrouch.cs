@@ -158,7 +158,7 @@ public class PlayerSprintAndcrouch : MonoBehaviour
                 player_Footsteps.volume_Max = crouch_Volume;
 
                 is_Crouching = true;
-
+ 
             }
 
         } // if we press c
