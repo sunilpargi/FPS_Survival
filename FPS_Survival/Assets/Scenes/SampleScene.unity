@@ -371,5 +371,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7725391924278271420, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2241021283e64904ab6e89a6334cbf26, type: 2}
+    - target: {fileID: 7725391924287663718, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725391924458827590, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be7818e58242e2042820b584bdf98827, type: 2}
+    - target: {fileID: 7725391924468341896, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725391925221439243, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3f168c1cf87aed145af536e5581e7db7, type: 2}
+    - target: {fileID: 7725391925228848315, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725391925293358374, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2f37735d8ff19941a0a0a5b2e675bc4, type: 2}
+    - target: {fileID: 7725391925405076316, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725391925412477056, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d221dfe5d06b7334db5796c48507e611, type: 2}
+    - target: {fileID: 7725391925488273430, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 18d7a2f4ae621164f9f0f41b2348b51e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
