@@ -16,6 +16,16 @@ public class PlayerSprintAndcrouch : MonoBehaviour
 
     private bool is_Crouching;
 
+    private PlayerFootSteps player_Footsteps;
+
+    private float sprint_Volume = 1f;
+    private float crouch_Volume = 0.1f;
+    private float walk_Volume_Min = 0.2f, walk_Volume_Max = 0.6f;
+
+    private float walk_Step_Distance = 0.4f;
+    private float sprint_Step_Distance = 0.25f;
+    private float crouch_Step_Distance = 0.5f;
+
 
     private void Awake()
     {
@@ -23,10 +33,15 @@ public class PlayerSprintAndcrouch : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
 
         look_Root = transform.GetChild(0);
+
+        player_Footsteps = GetComponentInChildren<PlayerFootSteps>();
     }
     void Start()
     {
-        
+        player_Footsteps.volume_Min = walk_Volume_Min;
+        player_Footsteps.volume_Max = walk_Volume_Max;
+        player_Footsteps.step_Distance = walk_Step_Distance;
+
     }
 
     // Update is called once per frame
@@ -48,11 +63,11 @@ public class PlayerSprintAndcrouch : MonoBehaviour
 
                 playerMovement.speed = sprint_Speed;
 
-                //player_Footsteps.step_Distance = sprint_Step_Distance;
-                //player_Footsteps.volume_Min = sprint_Volume;
-                //player_Footsteps.volume_Max = sprint_Volume;
+            player_Footsteps.step_Distance = sprint_Step_Distance;
+            player_Footsteps.volume_Min = sprint_Volume;
+            player_Footsteps.volume_Max = sprint_Volume;
 
-            }
+        }
 
         //}
 
@@ -61,9 +76,9 @@ public class PlayerSprintAndcrouch : MonoBehaviour
 
             playerMovement.speed = move_Speed;
 
-            //player_Footsteps.step_Distance = walk_Step_Distance;
-            //player_Footsteps.volume_Min = walk_Volume_Min;
-            //player_Footsteps.volume_Max = walk_Volume_Max;
+            player_Footsteps.step_Distance = walk_Step_Distance;
+            player_Footsteps.volume_Min = walk_Volume_Min;
+            player_Footsteps.volume_Max = walk_Volume_Max;
 
         }
 
@@ -124,9 +139,9 @@ public class PlayerSprintAndcrouch : MonoBehaviour
                 look_Root.localPosition = new Vector3(0f, stand_Height, 0f);
                 playerMovement.speed = move_Speed;
 
-                //player_Footsteps.step_Distance = walk_Step_Distance;
-                //player_Footsteps.volume_Min = walk_Volume_Min;
-                //player_Footsteps.volume_Max = walk_Volume_Max;
+                player_Footsteps.step_Distance = walk_Step_Distance;
+                player_Footsteps.volume_Min = walk_Volume_Min;
+                player_Footsteps.volume_Max = walk_Volume_Max;
 
                 is_Crouching = false;
 
@@ -138,9 +153,9 @@ public class PlayerSprintAndcrouch : MonoBehaviour
                 look_Root.localPosition = new Vector3(0f, crouch_Height, 0f);
                 playerMovement.speed = crouch_Speed;
 
-                //player_Footsteps.step_Distance = crouch_Step_Distance;
-                //player_Footsteps.volume_Min = crouch_Volume;
-                //player_Footsteps.volume_Max = crouch_Volume;
+                player_Footsteps.step_Distance = crouch_Step_Distance;
+                player_Footsteps.volume_Min = crouch_Volume;
+                player_Footsteps.volume_Max = crouch_Volume;
 
                 is_Crouching = true;
 

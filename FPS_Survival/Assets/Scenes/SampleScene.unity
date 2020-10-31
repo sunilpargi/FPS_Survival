@@ -296,77 +296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -61.52, z: 0}
---- !u!1 &1511293694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7725391924077787670, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-  m_PrefabInstance: {fileID: 7725391925318482152}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1511293695 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7725391924077787671, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-  m_PrefabInstance: {fileID: 7725391925318482152}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1511293696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511293694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b354009b0169d40a32b6a867598b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRoot: {fileID: 1637750822}
-  lookRoot: {fileID: 1511293695}
-  invert: 0
-  can_Unlock: 1
-  sensivity: 5
-  smooth_Steps: 10
-  smooth_Weight: 0.4
-  roll_Angle: 10
-  roll_Speed: 3
-  default_Look_Limits: {x: -70, y: 80}
---- !u!1 &1637750821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7725391923700654285, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-  m_PrefabInstance: {fileID: 7725391925318482152}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1637750822 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7725391923700654286, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-  m_PrefabInstance: {fileID: 7725391925318482152}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1637750824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637750821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f43d96a1b796e64b9436203f15bba33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jump_Force: 10
---- !u!114 &1637750825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637750821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 993c191ec5b881a44a159b8625d328a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprint_Speed: 10
-  move_Speed: 5
-  crouch_Speed: 2
 --- !u!1001 &7725391925318482152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -374,6 +303,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3588767327652043775, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: footstep_Clip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588767327652043775, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: footstep_Clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2429399f1ca311945a12f37a32c14aed, type: 3}
+    - target: {fileID: 3588767327652043775, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: footstep_Clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f0761d807b3ae1d4598a50357cb58a5e, type: 3}
+    - target: {fileID: 3588767327652043775, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: footstep_Clip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f27be18648dcceb46a46397f5c4c2e62, type: 3}
+    - target: {fileID: 3588767327652043775, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: footstep_Clip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3005916a05630f2439d211eaa6faba3d, type: 3}
     - target: {fileID: 7725391923700654285, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
       propertyPath: m_Name
       value: Player
