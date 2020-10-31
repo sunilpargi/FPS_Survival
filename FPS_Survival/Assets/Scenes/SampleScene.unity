@@ -543,14 +543,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 879731698, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-      propertyPath: weapon_Aim
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467225917, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
-      propertyPath: weapon_Aim
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7725391923700654285, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
       propertyPath: m_Name
       value: Player
@@ -597,6 +589,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7725391923700654286, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725391925228848315, guid: b77e3eefb1fc0db4394fd9aca76fec62, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

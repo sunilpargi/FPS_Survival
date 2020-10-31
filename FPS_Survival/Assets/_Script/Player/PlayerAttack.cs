@@ -110,7 +110,7 @@ public class PlayerAttack : MonoBehaviour
                         {
 
                             // throw arrow
-                      //      ThrowArrowOrSpear(true);
+                            ThrowArrowOrSpear(true);
 
                         }
                         else if (weapon_Manager.GetCurrentSelectedWeapon().bulletType
@@ -118,7 +118,7 @@ public class PlayerAttack : MonoBehaviour
                         {
 
                             // throw spear
-                       //     ThrowArrowOrSpear(false);
+                           ThrowArrowOrSpear(false);
 
                         }
 
@@ -184,4 +184,46 @@ public class PlayerAttack : MonoBehaviour
         } // weapon self aim
 
     } // zoom in and out
+
+    void ThrowArrowOrSpear(bool throwArrow)
+    {
+
+        if (throwArrow)
+        {
+
+            GameObject arrow = Instantiate(arrow_Prefab);
+            arrow.transform.position = arrow_Bow_StartPosition.position;
+
+            arrow.GetComponent<AarrowBow>().Launch(mainCam);
+
+        }
+        else
+        {
+
+            GameObject spear = Instantiate(spear_Prefab);
+            spear.transform.position = arrow_Bow_StartPosition.position;
+
+            spear.GetComponent<AarrowBow>().Launch(mainCam);
+
+        }
+
+
+    } // throw arrow or spear
+
+    void BulletFired()
+    {
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit))
+        {
+
+            if (hit.transform.tag == Tags.ENEMY_TAG)
+            {
+               // hit.transform.GetComponent<HealthScript>().ApplyDamage(damage);
+            }
+
+        }
+
+    } // bullet fired
 }
