@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
 
     public float fireRate = 15f;
     private float nextTimeToFire;
-    public float damage = 20f;
+    public float damage = 200f;
 
     private Animator zoomCameraAnim;
     private bool zoomed;
@@ -68,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
 
                 weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
 
-               // BulletFired();
+                BulletFired();
 
             }
 
@@ -80,6 +80,15 @@ public class PlayerAttack : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                // handle shoot
+                if (weapon_Manager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.BULLET)
+                {
+
+                    weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
+
+                      BulletFired();
+
+                }
 
                 // handle axe
                 if (weapon_Manager.GetCurrentSelectedWeapon().tag == Tags.AXE_TAG)
@@ -87,15 +96,7 @@ public class PlayerAttack : MonoBehaviour
                     weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
                 }
 
-                // handle shoot
-                if (weapon_Manager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.BULLET)
-                {
-
-                    weapon_Manager.GetCurrentSelectedWeapon().ShootAnimation();
-
-                  //  BulletFired();
-
-                }
+               
                 else
                 {
 
@@ -220,7 +221,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (hit.transform.tag == Tags.ENEMY_TAG)
             {
-               // hit.transform.GetComponent<HealthScript>().ApplyDamage(damage);
+                hit.transform.GetComponent<Health>().ApplyDamage(damage);
             }
 
         }
