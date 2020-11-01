@@ -26,8 +26,12 @@ public class PlayerSprintAndcrouch : MonoBehaviour
     private float sprint_Step_Distance = 0.25f;
     private float crouch_Step_Distance = 0.5f;
 
+    private PlayerStates player_Stats;
 
-    private void Awake()
+    private float sprint_Value = 100f;
+    public float sprint_Treshold = 10f;
+
+    void Awake()
     {
 
         playerMovement = GetComponent<PlayerMovement>();
@@ -35,13 +39,15 @@ public class PlayerSprintAndcrouch : MonoBehaviour
         look_Root = transform.GetChild(0);
 
         player_Footsteps = GetComponentInChildren<PlayerFootSteps>();
+
+        player_Stats = GetComponent<PlayerStates>();
+
     }
     void Start()
     {
         player_Footsteps.volume_Min = walk_Volume_Min;
         player_Footsteps.volume_Max = walk_Volume_Max;
         player_Footsteps.step_Distance = walk_Step_Distance;
-
     }
 
     // Update is called once per frame
@@ -55,21 +61,21 @@ public class PlayerSprintAndcrouch : MonoBehaviour
     {
 
         // if we have stamina we can sprint
-        //if (sprint_Value > 0f)
-        //{
+        if (sprint_Value > 0f)
+        {
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && !is_Crouching)
             {
 
                 playerMovement.speed = sprint_Speed;
 
-            player_Footsteps.step_Distance = sprint_Step_Distance;
-            player_Footsteps.volume_Min = sprint_Volume;
-            player_Footsteps.volume_Max = sprint_Volume;
+                player_Footsteps.step_Distance = sprint_Step_Distance;
+                player_Footsteps.volume_Min = sprint_Volume;
+                player_Footsteps.volume_Max = sprint_Volume;
+
+            }
 
         }
-
-        //}
 
         if (Input.GetKeyUp(KeyCode.LeftShift) && !is_Crouching)
         {
@@ -82,46 +88,46 @@ public class PlayerSprintAndcrouch : MonoBehaviour
 
         }
 
-        //if (Input.GetKey(KeyCode.LeftShift) && !is_Crouching)
-        //{
+        if (Input.GetKey(KeyCode.LeftShift) && !is_Crouching)
+        {
 
-        //    sprint_Value -= sprint_Treshold * Time.deltaTime;
+            sprint_Value -= sprint_Treshold * Time.deltaTime;
 
-        //    if (sprint_Value <= 0f)
-        //    {
+            if (sprint_Value <= 0f)
+            {
 
-        //        sprint_Value = 0f;
+                sprint_Value = 0f;
 
-        //        // reset the speed and sound
-        //        playerMovement.speed = move_Speed;
-        //        player_Footsteps.step_Distance = walk_Step_Distance;
-        //        player_Footsteps.volume_Min = walk_Volume_Min;
-        //        player_Footsteps.volume_Max = walk_Volume_Max;
+                // reset the speed and sound
+                playerMovement.speed = move_Speed;
+                player_Footsteps.step_Distance = walk_Step_Distance;
+                player_Footsteps.volume_Min = walk_Volume_Min;
+                player_Footsteps.volume_Max = walk_Volume_Max;
 
 
-        //    }
+            }
 
-        //    player_Stats.Display_StaminaStats(sprint_Value);
+            player_Stats.Display_StaminaStats(sprint_Value);
 
-        //}
-        //else
-        //{
+        }
+        else
+        {
 
-        //    if (sprint_Value != 100f)
-        //    {
+            if (sprint_Value != 100f)
+            {
 
-        //        sprint_Value += (sprint_Treshold / 2f) * Time.deltaTime;
+                sprint_Value += (sprint_Treshold / 2f) * Time.deltaTime;
 
-        //        player_Stats.Display_StaminaStats(sprint_Value);
+                player_Stats.Display_StaminaStats(sprint_Value);
 
-        //        if (sprint_Value > 100f)
-        //        {
-        //            sprint_Value = 100f;
-        //        }
+                if (sprint_Value > 100f)
+                {
+                    sprint_Value = 100f;
+                }
 
-        //    }
+            }
 
-        //}
+        }
 
 
     } // sprint
@@ -158,7 +164,7 @@ public class PlayerSprintAndcrouch : MonoBehaviour
                 player_Footsteps.volume_Max = crouch_Volume;
 
                 is_Crouching = true;
- 
+
             }
 
         } // if we press c

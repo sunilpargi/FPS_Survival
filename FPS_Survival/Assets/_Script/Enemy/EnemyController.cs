@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject attack_Point;
 
-   //s private EnemyAudio enemy_Audio;
+    private EnemyAudio enemy_Audio;
 
     void Awake()
     {
@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
 
         target = GameObject.FindWithTag(Tags.PLAYER_TAG).transform;
 
-        //enemy_Audio = GetComponentInChildren<EnemyAudio>();
+        enemy_Audio = GetComponentInChildren<EnemyAudio>();
 
     }
 
@@ -130,7 +130,7 @@ public class EnemyController : MonoBehaviour
             enemy_State = EnemyState.CHASE;
 
             // play spotted audio
-           // enemy_Audio.Play_ScreamSound();
+            enemy_Audio.Play_ScreamSound();
 
         }
 
@@ -217,7 +217,7 @@ public class EnemyController : MonoBehaviour
             attack_Timer = 0f;
 
             // play attack sound
-          //  enemy_Audio.Play_AttackSound();
+            enemy_Audio.Play_AttackSound();
 
         }
 

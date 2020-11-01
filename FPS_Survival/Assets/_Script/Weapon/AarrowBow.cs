@@ -47,7 +47,7 @@ public class AarrowBow : MonoBehaviour
         if (target.tag == Tags.ENEMY_TAG)
         {
 
-            //target.GetComponent<HealthScript>().ApplyDamage(damage);
+            target.GetComponent<Health>().ApplyDamage(damage);
 
             gameObject.SetActive(false);
 

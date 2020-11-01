@@ -15,9 +15,9 @@ public class Health : MonoBehaviour
 
     private bool is_Dead;
 
-   // private EnemyAudio enemyAudio;
+    private EnemyAudio enemyAudio;
 
-   // private PlayerStats player_Stats;
+    private PlayerStates player_Stats;
 
     void Awake()
     {
@@ -29,12 +29,12 @@ public class Health : MonoBehaviour
             navAgent = GetComponent<NavMeshAgent>();
 
             // get enemy audio
-          //  enemyAudio = GetComponentInChildren<EnemyAudio>();
+            enemyAudio = GetComponentInChildren<EnemyAudio>();
         }
 
         if (is_Player)
         {
-         //   player_Stats = GetComponent<PlayerStats>();
+            player_Stats = GetComponent<PlayerStates>();
         }
 
     }
@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
         if (is_Player)
         {
             // show the stats(display the health UI value)
-          //  player_Stats.Display_HealthStats(health);
+           player_Stats.Display_HealthStats(health);
         }
 
         if (is_Boar || is_Cannibal)
@@ -89,7 +89,7 @@ public class Health : MonoBehaviour
             StartCoroutine(DeadSound());
 
             // EnemyManager spawn more enemies
-         //   EnemyManager.instance.EnemyDied(true);
+           EnemyManager.instance.EnemyDied(true);
         }
 
         if (is_Boar)
@@ -104,7 +104,7 @@ public class Health : MonoBehaviour
             StartCoroutine(DeadSound());
 
             // EnemyManager spawn more enemies
-          //  EnemyManager.instance.EnemyDied(false);
+          EnemyManager.instance.EnemyDied(false);
         }
 
         if (is_Player)
@@ -118,7 +118,7 @@ public class Health : MonoBehaviour
             }
 
             // call enemy manager to stop spawning enemis
-           // EnemyManager.instance.StopSpawning();
+          EnemyManager.instance.StopSpawning();
 
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;
@@ -154,7 +154,7 @@ public class Health : MonoBehaviour
     IEnumerator DeadSound()
     {
         yield return new WaitForSeconds(0.3f);
-      //  enemyAudio.Play_DeadSound();
+        enemyAudio.Play_DeadSound();
     }
 
 }
